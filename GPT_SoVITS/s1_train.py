@@ -144,7 +144,7 @@ def main(args):
     except Exception:
         ckpt_path = None
     print("ckpt_path:", ckpt_path)
-    trainer.fit(model, data_module, ckpt_path=ckpt_path)
+    trainer.fit(model, data_module, ckpt_path=ckpt_path, weights_only=False)
 
 
 # srun --gpus-per-node=1 --ntasks-per-node=1 python train.py --path-to-configuration configurations/default.yaml
